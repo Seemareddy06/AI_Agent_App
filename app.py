@@ -96,7 +96,7 @@ if user_query:
     elif "INSURANCE" in agent_choice:
         answer = insurance_agent(user_query, vectorstore)
     else:
-        answer = "❌ Sorry, I could not determine the right agent."
+        answer = " Sorry, I could not determine the right agent."
 
     st.session_state.messages.append({"role": "assistant", "content": answer})
 
@@ -104,3 +104,4 @@ if user_query:
 for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
         st.write(msg["content"])
+
